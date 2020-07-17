@@ -1,0 +1,11 @@
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      if: branch = master
+      script:
+      - echo "HIHI"
+
+after_success:
+  - ./notification.sh
